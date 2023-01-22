@@ -1,0 +1,236 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
+
+:root {
+    font-family: 'Raleway', sans-serif;
+    font-size: 14px;
+    --gradient-bar: linear-gradient(to right, hsl(6, 100%, 80%), hsl(335, 100%, 65%));
+    --pale-blue: hsl(243, 100%, 93%);
+    --grayish-blue: hsl(229, 7%, 55%);
+    --dark-blue: hsl(228, 56%, 26%);
+    --very-dark-blue: hsl(229, 57%, 11%);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: var(--very-dark-blue);
+    background-image: url(images/bg-desktop.png);
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: 100% 50%;
+}
+
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cards {
+    display: flex;
+    align-items: flex-end;
+
+}
+
+.left-card {
+    background-color: var(--dark-blue);
+    padding: 3rem;
+    margin-right: 1.7rem;
+    padding-right: 6rem;
+    border-radius: 0.5rem 5rem 0.5rem 0.5rem;
+}
+
+.right-card {
+    width: 40rem;
+    color: var(--pale-blue);
+    background-color: var(--dark-blue);
+    padding: 3rem;
+    border-radius: 0.5rem;
+}
+
+img {
+    object-fit: scale-down;
+    width: 100%;
+    height: 100%;
+}
+
+.Logo {
+    width:  80%;
+    height: 50%;
+    margin-bottom: 1.5rem;
+    position: relative;
+    right: 0.85rem;
+}
+
+.Logo:hover {
+    cursor: pointer;
+    scale: 1.1;
+    transition: 150ms;
+}
+
+.icons {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.left-card .icons span {
+    padding: 0.7rem;
+    border-radius: 0.8rem;
+    margin-right: 0.9rem;
+    background-color: var(--very-dark-blue);
+    width: 4rem;
+    height: 4rem;
+}
+
+.left-card .icons span:hover {
+    scale: 1.1;
+    cursor: pointer;
+    transition: 180ms;
+}
+
+.bold-text {
+    font-weight: 700;
+}
+
+.progress-bar {
+    margin: 1.2rem 0 0.7rem 0;
+    width: 100%;
+    height: 1.2rem;
+    background-color: hsla(229, 57%, 11%, 0.582);
+    line-height: 1.5rem;
+    border-radius: 0.7rem;
+    padding: 0.2rem;
+}
+
+.progress-bar-fill {
+    overflow: hidden;
+    border-radius: 0.5rem;
+    width: 81.5%;
+    height: 100%;
+    background-image: var(--gradient-bar);
+    background-size: 100% 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0.055rem;
+    padding-right: 0.1rem;
+}
+
+.white-point {
+    height: 100%;
+    aspect-ratio: 1/1;
+    /* width: same-as-height; */
+    background-color: var(--pale-blue);
+    border-radius: 10px;
+}
+
+.bar-range {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.storage-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.storage-left {
+    background-color: white;
+    color: var(--very-dark-blue);
+    text-transform: uppercase;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    border-radius: 0.8rem;
+    position: absolute;
+    right: 0;
+    bottom: 200%;
+}
+
+.storage-left::after {
+    content: "";
+    position: absolute;
+    /* display: inline-block; */
+    border-top: 30px solid white;
+    border-left: 35px solid transparent;
+    bottom: -1.3rem;
+    right: 0;
+}
+
+.storage-left .bold-text {
+    font-size: 3rem;
+    margin-right: 1rem;
+}
+
+.storage-left p {
+    color: var(--grayish-blue);
+    font-weight: 700;
+    opacity: 0.8;
+    letter-spacing: 0.1rem;
+}
+
+
+footer {
+    position: absolute;
+    bottom: 0; 
+}
+
+@media screen and (max-width: 800px) {
+    
+    .cards {
+        flex-direction: column;
+        align-items: center;
+        max-width: 330px;
+    }
+
+    .storage-left {
+        background-color: white;
+        color: var(--very-dark-blue);
+        text-transform: uppercase;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-radius: 0.8rem;
+        position: absolute;
+        right: 50px;
+        top: 85px;
+        padding: 2.3rem 1.2rem;
+    }
+
+    .storage-left::after {
+        display: none;
+    }
+
+    .left-card {
+        margin-bottom: 1.5rem;
+        margin-right: 0;
+    }
+
+    .right-card {
+        width: 100%;
+    }
+
+    .storage-left .bold-text {
+        font-size: 2rem;
+    }
+
+    .storage-left p {
+        font-size: 1rem;
+    }
+}
